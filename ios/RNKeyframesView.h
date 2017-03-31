@@ -5,5 +5,6 @@
 @interface RNKeyframesView : RCTView
 @property (nonatomic, copy) NSDictionary *src;
 @property (nonatomic, assign) BOOL *paused;
+@property (nonatomic, assign) BOOL *playOnce;
 @property (nonatomic, readonly) NSNumber *seek;
 @end

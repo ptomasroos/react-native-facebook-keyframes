@@ -63,6 +63,7 @@
         _src = [src copy];
     }
 }
+
 - (void)setPaused:(BOOL *)paused
 {
     if(paused != _paused) {
@@ -70,7 +71,11 @@
         if(_paused) {
             [_vectorLayer pauseAnimation];
         } else {
-            [_vectorLayer resumeAnimation];
+            if (_playOnce) {
+                [_vectorLayer setRepeatCount:0];
+            } else {
+                [_vectorLayer resumeAnimation];
+            }
         }
     }
 }
